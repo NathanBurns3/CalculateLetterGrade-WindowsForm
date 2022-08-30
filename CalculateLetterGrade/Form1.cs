@@ -7,23 +7,36 @@ namespace CalculateLetterGrade
             InitializeComponent();
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            double letterGrade = Convert.ToDouble(txtNumberGrade.Text);
+            /******************************
+             * This method calculates the 
+             * letter grade for a student
+             * based on number grade given
+            ******************************/
 
-            if (letterGrade >= 89.5)
+            // get the number grade from the number grade textbox
+            double numberGrade = Convert.ToDouble(txtNumberGrade.Text);
+
+            // set the letter grade based on the value of the number grade
+            if (numberGrade >= 89.5)
             {
                 txtLetterGrade.Text = "A";
             }
-            else if (letterGrade >= 79.5)
+            else if (numberGrade >= 79.5)
             {
                 txtLetterGrade.Text = "B";
             }
-            else if (letterGrade >= 69.5)
+            else if (numberGrade >= 69.5)
             {
                 txtLetterGrade.Text = "C";
             }
-            else if (letterGrade >= 59.5)
+            else if (numberGrade >= 59.5)
             {
                 txtLetterGrade.Text = "D";
             }
@@ -32,12 +45,8 @@ namespace CalculateLetterGrade
                 txtLetterGrade.Text = "F";
             }
 
+            // Move the focus to the number grade textbox
             txtNumberGrade.Focus();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
